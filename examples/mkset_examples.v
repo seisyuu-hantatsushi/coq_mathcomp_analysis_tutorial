@@ -10,7 +10,7 @@ Section Classical_Sets_Examples.
   | Orange
   | PineApple
   | Mango.
-
+  
   Definition IsMyFruits (fruits : Fruits) : Prop :=
     match fruits with
     | Apple => True
@@ -30,4 +30,4 @@ Section Classical_Sets_Examples.
     done.
   Qed.
   
-End.
+End Classical_Sets_Examples.
