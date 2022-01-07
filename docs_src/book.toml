@@ -4,3 +4,9 @@ language = "en"
 multilingual = false
 src = "src"
 title = "Tutorial of mathcomp analysis"
+
+[build]
+build-dir = "../docs"
+
+[output.html]
+mathjax-support = true
