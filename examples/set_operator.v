@@ -11,12 +11,11 @@ Section Sets_Operator.
     move => A B.
     case => HAinB HBinA.
     rewrite predeqP => x.
-    rewrite /iff.
     split;[apply HAinB|apply HBinA].
   Qed.
 
   Goal forall A B:set T, A `<=` B /\ B `<=` A -> A = B.
-  Proof. move => A B. by rewrite seteqP. Qed.
+  Proof. apply seteqP. Qed.
 
   Section UseImplicit.
     Implicit Types A B C D : set T.
@@ -37,7 +36,30 @@ Section Sets_Operator.
     Qed.
 
     Goal forall A B C, (A `|` (B `&` C)) = (A `|` B) `&` (A `|` C).
-    Proof. move => A B C. by rewrite setUIr. Qed.
+    Proof.
+      move => A B C.
+      rewrite predeqE => x.
+      apply asbool_eq_equiv; rewrite asbool_or !asbool_and !asbool_or orb_andr.
+      reflexivity.
+    Qed.
+
+    Goal forall A B C, (A `|` (B `&` C)) = (A `|` B) `&` (A `|` C).
+    Proof.
+      apply setUIr.
+    Qed.
+
+    Goal forall A B, ~`(A `|` B) = ~`A  `&` ~`B.
+    Proof.
+      move => A B.
+      rewrite predeqE => x.
+      apply asbool_eq_equiv; rewrite asbool_and !asbool_neg asbool_or negb_or.
+      reflexivity.
+    Qed.
+
+    Goal forall A B, ~`(A `|` B) = ~`A  `&` ~`B.
+    Proof.
+      apply setCU.
+    Qed.
 
   End UseImplicit.
 
