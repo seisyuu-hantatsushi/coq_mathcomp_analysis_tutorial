@@ -5,7 +5,7 @@ Section Sets_Operator.
   Local Open Scope classical_set_scope.
 
   Variable T:Type.
- 
+
   Goal forall A B:set T, A `<=` B /\ B `<=` A -> A = B.
   Proof.
     move => A B.

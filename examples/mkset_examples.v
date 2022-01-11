@@ -1,7 +1,7 @@
 From mathcomp Require Import all_ssreflect boolp classical_sets.
 
-Section Classical_Sets_Examples.
-  Local Open Scope classical_set_scope. 
+Section Make_Sets_Examples.
+  Local Open Scope classical_set_scope.
 
   Variable T:Type.
 
@@ -65,5 +65,5 @@ Section Classical_Sets_Examples.
     unfold IsEven.
     apply.
   Qed.
-
-End Classical_Sets_Examples.
+  
+End Make_Sets_Examples.
