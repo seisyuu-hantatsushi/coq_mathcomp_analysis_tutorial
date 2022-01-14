@@ -6,7 +6,7 @@
 - [集合](./set/set.md)
   - [集合の定義](./set/defset.md)
   - [集合の演算](./set/setop.md)
-
+  - [写像](./set/image.md)
 - [Coq](./coq/coq.md)
-  - [Coqでの古典集合](./coq/classical_sets/classical_set.md)
-     - [写像・関数](./coq/classical_sets/image.md)
+  - [Coqでの古典集合](./coq/classical_sets/classical_sets.md)
+     - [写像](./coq/classical_sets/image.md)
