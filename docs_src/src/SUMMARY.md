@@ -8,4 +8,5 @@
   - [集合の演算](./set/setop.md)
 
 - [Coq](./coq/coq.md)
-  - [Coqでの古典集合](./coq/classical_set.md)
+  - [Coqでの古典集合](./coq/classical_sets/classical_set.md)
+     - [写像・関数](./coq/classical_sets/image.md)
