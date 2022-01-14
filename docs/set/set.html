@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../logical/logical.html"><strong aria-hidden="true">1.</strong> 論理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../logical/prop_logical.html"><strong aria-hidden="true">1.1.</strong> 命題論理</a></li><li class="chapter-item expanded "><a href="../logical/pred_logical.html"><strong aria-hidden="true">1.2.</strong> 述語論理</a></li></ol></li><li class="chapter-item expanded "><a href="../set/set.html" class="active"><strong aria-hidden="true">2.</strong> 集合</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../set/defset.html"><strong aria-hidden="true">2.1.</strong> 集合の定義</a></li><li class="chapter-item expanded "><a href="../set/setop.html"><strong aria-hidden="true">2.2.</strong> 集合の演算</a></li></ol></li><li class="chapter-item expanded "><a href="../coq/coq.html"><strong aria-hidden="true">3.</strong> Coq</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../coq/classical_set.html"><strong aria-hidden="true">3.1.</strong> Coqでの古典集合</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../logical/logical.html"><strong aria-hidden="true">1.</strong> 論理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../logical/prop_logical.html"><strong aria-hidden="true">1.1.</strong> 命題論理</a></li><li class="chapter-item expanded "><a href="../logical/pred_logical.html"><strong aria-hidden="true">1.2.</strong> 述語論理</a></li></ol></li><li class="chapter-item expanded "><a href="../set/set.html" class="active"><strong aria-hidden="true">2.</strong> 集合</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../set/defset.html"><strong aria-hidden="true">2.1.</strong> 集合の定義</a></li><li class="chapter-item expanded "><a href="../set/setop.html"><strong aria-hidden="true">2.2.</strong> 集合の演算</a></li><li class="chapter-item expanded "><a href="../set/image.html"><strong aria-hidden="true">2.3.</strong> 写像</a></li></ol></li><li class="chapter-item expanded "><a href="../coq/coq.html"><strong aria-hidden="true">3.</strong> Coq</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../coq/classical_sets/classical_sets.html"><strong aria-hidden="true">3.1.</strong> Coqでの古典集合</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../coq/classical_sets/image.html"><strong aria-hidden="true">3.1.1.</strong> 写像</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -145,13 +145,20 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="集合"><a class="header" href="#集合">集合</a></h1>
-<h2 id="等しいということ"><a class="header" href="#等しいということ">等しいということ</a></h2>
 <h2 id="集合-1"><a class="header" href="#集合-1">集合</a></h2>
 <p>数学で扱う対象の集まりを<strong>集合</strong>といい,その集合を構成する対象を<strong>元</strong>,<strong>要素</strong>と言う.集合\( A \)に要素\( a \)が属するとき,
 \[
 a \in A
 \]
 と表す.</p>
+<h2 id="公理"><a class="header" href="#公理">公理</a></h2>
+<p>数学で,無条件で認める仮定を<strong>公理</strong>と言う.
+形式体系での集合論は通常<strong>ZFC公理系</strong>で以下を公理として認める.</p>
+<h3 id="外延性公理"><a class="header" href="#外延性公理">外延性公理</a></h3>
+<p>集合の等しさを定める. 同じ要素で構成されるならその集合は等しい
+\[
+\forall A \forall B (\forall x ( x \in A \leftrightarrow x \in B)) \to A = B
+\]</p>
 
                     </main>
 

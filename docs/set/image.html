@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Coqでの古典集合 - Tutorial of mathcomp analysis</title>
+        <title>写像 - Tutorial of mathcomp analysis</title>
 
 
         <!-- Custom HTML head -->
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../logical/logical.html"><strong aria-hidden="true">1.</strong> 論理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../logical/prop_logical.html"><strong aria-hidden="true">1.1.</strong> 命題論理</a></li><li class="chapter-item expanded "><a href="../logical/pred_logical.html"><strong aria-hidden="true">1.2.</strong> 述語論理</a></li></ol></li><li class="chapter-item expanded "><a href="../set/set.html"><strong aria-hidden="true">2.</strong> 集合</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../set/defset.html"><strong aria-hidden="true">2.1.</strong> 集合の定義</a></li><li class="chapter-item expanded "><a href="../set/setop.html"><strong aria-hidden="true">2.2.</strong> 集合の演算</a></li></ol></li><li class="chapter-item expanded "><a href="../coq/coq.html"><strong aria-hidden="true">3.</strong> Coq</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../coq/classical_set.html" class="active"><strong aria-hidden="true">3.1.</strong> Coqでの古典集合</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../logical/logical.html"><strong aria-hidden="true">1.</strong> 論理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../logical/prop_logical.html"><strong aria-hidden="true">1.1.</strong> 命題論理</a></li><li class="chapter-item expanded "><a href="../logical/pred_logical.html"><strong aria-hidden="true">1.2.</strong> 述語論理</a></li></ol></li><li class="chapter-item expanded "><a href="../set/set.html"><strong aria-hidden="true">2.</strong> 集合</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../set/defset.html"><strong aria-hidden="true">2.1.</strong> 集合の定義</a></li><li class="chapter-item expanded "><a href="../set/setop.html"><strong aria-hidden="true">2.2.</strong> 集合の演算</a></li><li class="chapter-item expanded "><a href="../set/image.html" class="active"><strong aria-hidden="true">2.3.</strong> 写像</a></li></ol></li><li class="chapter-item expanded "><a href="../coq/coq.html"><strong aria-hidden="true">3.</strong> Coq</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../coq/classical_sets/classical_sets.html"><strong aria-hidden="true">3.1.</strong> Coqでの古典集合</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../coq/classical_sets/image.html"><strong aria-hidden="true">3.1.1.</strong> 写像</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -144,33 +144,44 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="coqでの古典集合"><a class="header" href="#coqでの古典集合">Coqでの古典集合</a></h1>
-<h2 id="mathcomp"><a class="header" href="#mathcomp">mathcomp</a></h2>
-<h3 id="外包的記法"><a class="header" href="#外包的記法">外包的記法</a></h3>
-<pre><code class="language-coq">Inductive Fruits : Type :=
-| Apple
-| Orange
-| PineApple
-| Mango.
-</code></pre>
-<h3 id="内包的記法"><a class="header" href="#内包的記法">内包的記法</a></h3>
-<pre><code class="language-coq">  Definition IsMyFruits (fruits : Fruits) : Prop :=
-    match fruits with
-    | Apple =&gt; True
-    | Orange =&gt; True
-    | Mango =&gt; True
-    | _ =&gt; False
-    end.
-</code></pre>
+                        <h1 id="写像"><a class="header" href="#写像">写像</a></h1>
+<h2 id="写像-1"><a class="header" href="#写像-1">写像</a></h2>
+<h3 id="写像-2"><a class="header" href="#写像-2">写像</a></h3>
+<p>2つの集合の\(X,Y\)の要素\( \forall x \in X, \forall y \in Y \)において,\(x\)に\(y\)を唯一つ対応させる<strong>写像(関数)</strong>\(f\)を
+\[
+f: X \mapsto Y
+\]
+で定義する.\(X\)を<strong>定義域</strong>,\(Y\)を<strong>値域</strong>という.
+\[
+y = f(x)
+\]
+と書いたとき,\(y\)を\(f\)による\(x\)の<strong>値</strong>という.
+\(A \subset X, B \subset Y\)のとき
+\[
+B = f(A)
+\]
+ならば,\(B\)を\(f(A)\)の<strong>像</strong>という.</p>
+<h3 id="逆写像"><a class="header" href="#逆写像">逆写像</a></h3>
+<p>\[
+f: X \mapsto Y
+\]
+で定義された写像に対して,\(\forall B \subset Y\)としたとき,
+\[
+f^{-1}(B) := \{x \in X| f(x) \in B \}
+\]
+を\(B\)による</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../coq/coq.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../set/setop.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next" href="../coq/coq.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -178,10 +189,13 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../coq/coq.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../set/setop.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next" href="../coq/coq.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>

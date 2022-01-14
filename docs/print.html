@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="logical/logical.html"><strong aria-hidden="true">1.</strong> 論理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="logical/prop_logical.html"><strong aria-hidden="true">1.1.</strong> 命題論理</a></li><li class="chapter-item expanded "><a href="logical/pred_logical.html"><strong aria-hidden="true">1.2.</strong> 述語論理</a></li></ol></li><li class="chapter-item expanded "><a href="set/set.html"><strong aria-hidden="true">2.</strong> 集合</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="set/defset.html"><strong aria-hidden="true">2.1.</strong> 集合の定義</a></li><li class="chapter-item expanded "><a href="set/setop.html"><strong aria-hidden="true">2.2.</strong> 集合の演算</a></li></ol></li><li class="chapter-item expanded "><a href="coq/coq.html"><strong aria-hidden="true">3.</strong> Coq</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="coq/classical_set.html"><strong aria-hidden="true">3.1.</strong> Coqでの古典集合</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="logical/logical.html"><strong aria-hidden="true">1.</strong> 論理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="logical/prop_logical.html"><strong aria-hidden="true">1.1.</strong> 命題論理</a></li><li class="chapter-item expanded "><a href="logical/pred_logical.html"><strong aria-hidden="true">1.2.</strong> 述語論理</a></li></ol></li><li class="chapter-item expanded "><a href="set/set.html"><strong aria-hidden="true">2.</strong> 集合</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="set/defset.html"><strong aria-hidden="true">2.1.</strong> 集合の定義</a></li><li class="chapter-item expanded "><a href="set/setop.html"><strong aria-hidden="true">2.2.</strong> 集合の演算</a></li><li class="chapter-item expanded "><a href="set/image.html"><strong aria-hidden="true">2.3.</strong> 写像</a></li></ol></li><li class="chapter-item expanded "><a href="coq/coq.html"><strong aria-hidden="true">3.</strong> Coq</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="coq/classical_sets/classical_sets.html"><strong aria-hidden="true">3.1.</strong> Coqでの古典集合</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="coq/classical_sets/image.html"><strong aria-hidden="true">3.1.1.</strong> 写像</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -149,13 +149,20 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="命題論理"><a class="header" href="#命題論理">命題論理</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="述語論理"><a class="header" href="#述語論理">述語論理</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="集合"><a class="header" href="#集合">集合</a></h1>
-<h2 id="等しいということ"><a class="header" href="#等しいということ">等しいということ</a></h2>
 <h2 id="集合-1"><a class="header" href="#集合-1">集合</a></h2>
 <p>数学で扱う対象の集まりを<strong>集合</strong>といい,その集合を構成する対象を<strong>元</strong>,<strong>要素</strong>と言う.集合\( A \)に要素\( a \)が属するとき,
 \[
 a \in A
 \]
 と表す.</p>
+<h2 id="公理"><a class="header" href="#公理">公理</a></h2>
+<p>数学で,無条件で認める仮定を<strong>公理</strong>と言う.
+形式体系での集合論は通常<strong>ZFC公理系</strong>で以下を公理として認める.</p>
+<h3 id="外延性公理"><a class="header" href="#外延性公理">外延性公理</a></h3>
+<p>集合の等しさを定める. 同じ要素で構成されるならその集合は等しい
+\[
+\forall A \forall B (\forall x ( x \in A \leftrightarrow x \in B)) \to A = B
+\]</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="集合の定義"><a class="header" href="#集合の定義">集合の定義</a></h1>
 <p>集合を定義するのに,その集合に属する要素をすべて並べる<strong>外延的記法</strong>と
 その集合に属するために必要な論理的条件にて,それに属する要素を定める<strong>内包的記法</strong>がある.</p>
@@ -170,6 +177,32 @@ a \in A
 \{ x | x &lt; 0 \land x=2n, n \in \mathbb{N} \}
 \]</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="集合の演算"><a class="header" href="#集合の演算">集合の演算</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="写像"><a class="header" href="#写像">写像</a></h1>
+<h2 id="写像-1"><a class="header" href="#写像-1">写像</a></h2>
+<h3 id="写像-2"><a class="header" href="#写像-2">写像</a></h3>
+<p>2つの集合の\(X,Y\)の要素\( \forall x \in X, \forall y \in Y \)において,\(x\)に\(y\)を唯一つ対応させる<strong>写像(関数)</strong>\(f\)を
+\[
+f: X \mapsto Y
+\]
+で定義する.\(X\)を<strong>定義域</strong>,\(Y\)を<strong>値域</strong>という.
+\[
+y = f(x)
+\]
+と書いたとき,\(y\)を\(f\)による\(x\)の<strong>値</strong>という.
+\(A \subset X, B \subset Y\)のとき
+\[
+B = f(A)
+\]
+ならば,\(B\)を\(f(A)\)の<strong>像</strong>という.</p>
+<h3 id="逆写像"><a class="header" href="#逆写像">逆写像</a></h3>
+<p>\[
+f: X \mapsto Y
+\]
+で定義された写像に対して,\(\forall B \subset Y\)としたとき,
+\[
+f^{-1}(B) := \{x \in X| f(x) \in B \}
+\]
+を\(B\)による</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="coq"><a class="header" href="#coq">Coq</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="coqでの古典集合"><a class="header" href="#coqでの古典集合">Coqでの古典集合</a></h1>
 <h2 id="mathcomp"><a class="header" href="#mathcomp">mathcomp</a></h2>
@@ -188,6 +221,17 @@ a \in A
     | Mango =&gt; True
     | _ =&gt; False
     end.
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="写像-3"><a class="header" href="#写像-3">写像</a></h1>
+<h3 id="写像-4"><a class="header" href="#写像-4">写像</a></h3>
+<p>\( f(A \cup B) = f(A) \cup f(B) \)</p>
+<pre><code>Lemma image_setU f A B : f @` (A `|` B) = f @` A `|` f @` B.
+</code></pre>
+<p>\( f(A \cap B) \subset f(A) \cap f(B) \)</p>
+<pre><code>Lemma sub_image_setI f A B : f @` (A `&amp;` B) `&lt;=` f @` A `&amp;` f @` B.
+</code></pre>
+<p>\( A \subset f^{-1}(A) \)</p>
+<pre><code>Lemma preimage_image f A : A `&lt;=` f @^-1` (f @` A).
 </code></pre>
 
                     </main>
