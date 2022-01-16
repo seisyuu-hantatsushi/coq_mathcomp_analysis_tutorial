@@ -3,7 +3,8 @@ From mathcomp Require Import all_ssreflect boolp classical_sets.
 Section Image.
   Local Open Scope classical_set_scope.
   Context {aT rT:Type}.
-  Implicit Types (A B: set aT) (f: aT -> rT) (Y Z: set rT).
+
+  Implicit Types (A B: set aT) (Y Z: set rT) (f: aT -> rT) (g: rT -> aT).
 
   Goal forall f A, A `<=` f @^-1` (f @` A).
   Proof.
@@ -36,5 +37,26 @@ Section Image.
     apply: (Hg (f s) (f t)).
     apply: Hfg.
   Qed.
-  
+
+
+  Goal forall A Y (f:aT -> rT) (g:rT -> aT),
+      cancel f g -> injective f /\ g @` setT = setT.
+  Proof.
+    move => A Y f g Hcancel.
+    split.
+    move => s t Hf.
+    move: (Hcancel s) (Hcancel t) => Hcancels Hcancelt.
+    rewrite -Hcancels -Hcancelt Hf.
+    reflexivity.
+    apply predeqP => a.
+    split => H.
+    done.
+    exists (f a).
+    done.
+    by rewrite Hcancel.
+  Qed.
+
+  Definition surjective (aT rT:Type) (A: set aT) (Y: set rT) (f:aT -> rT) :=
+    forall y, y \in Y -> Y = f @` A.
+
 End Image.
